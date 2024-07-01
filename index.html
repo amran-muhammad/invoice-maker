@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
+</head>
+
+<body>
+    <div id="content">
+        <header>
+            <h1>Invoice</h1>
+            <address contenteditable>
+                <p>Abdur Razzaq</p>
+                <p>101 E. Chapman Ave<br>Orange, CA 92866</p>
+                <p>(800) 555-1234</p>
+            </address>
+            <span><img alt="" src="http://www.jonathantneal.com/examples/invoice/logo/1.jpg"><input type="file"
+                    accept="image/*"></span>
+        </header>
+        <article>
+            <h1>Recipient</h1>
+            <hr>
+            <br>
+            <br>
+            <address contenteditable>
+                <p>Some Company<br>c/o Some Guy</p>
+            </address>
+            <table class="meta">
+                <tr>
+                    <th><span contenteditable>Invoice #</span></th>
+                    <td><span contenteditable>101138</span></td>
+                </tr>
+                <tr>
+                    <th><span contenteditable>Date</span></th>
+                    <td><span contenteditable id="date-container"></span></td>
+                </tr>
+                <tr>
+                    <th><span contenteditable>Amount Due</span></th>
+                    <td><span id="prefix" contenteditable>$</span><span>600.00</span></td>
+                </tr>
+            </table>
+            <table class="inventory">
+                <thead>
+                    <tr>
+                        <th><span contenteditable>Item</span></th>
+                        <th><span contenteditable>Description</span></th>
+                        <th><span contenteditable>Rate</span></th>
+                        <th><span contenteditable>Quantity</span></th>
+                        <th><span contenteditable>Price</span></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><a class="cut" data-html2canvas-ignore>-</a><span contenteditable>Front End Consultation</span></td>
+                        <td><span contenteditable>Experience Review</span></td>
+                        <td><span data-prefix>$</span><span contenteditable>150.00</span></td>
+                        <td><span contenteditable>4</span></td>
+                        <td><span data-prefix>$</span><span>600.00</span></td>
+                    </tr>
+                </tbody>
+            </table>
+            <a class="add" data-html2canvas-ignore>+</a>
+            <table class="balance">
+                <tr>
+                    <th><span contenteditable>Total</span></th>
+                    <td><span data-prefix>$</span><span>600.00</span></td>
+                </tr>
+                <tr>
+                    <th><span contenteditable>Amount Paid</span></th>
+                    <td><span data-prefix>$</span><span contenteditable>0.00</span></td>
+                </tr>
+                <tr>
+                    <th><span contenteditable>Balance Due</span></th>
+                    <td><span data-prefix>$</span><span>600.00</span></td>
+                </tr>
+            </table>
+        </article>
+        <aside>
+            <h1><span contenteditable>Thanks for shopping with us</span></h1>
+            <div contenteditable>
+                <p>Made by Amran Muhammad</p>
+            </div>
+        </aside>
+    </div>
+    <div>
+        <button class="download" id="download" onclick="downloadPDF()">Download PDF</button>
+    </div>
+    <script src="index.js"></script>
+</body>
+
+</html>
