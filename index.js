@@ -170,13 +170,14 @@
   
       if (e.target.matchesSelector('.add')) {
         document.querySelector('table.inventory tbody').appendChild(generateTableRow());
+        updateInvoice();
       } else if (e.target.className == 'cut') {
         row = e.target.ancestorQuerySelector('tr');
   
         row.parentNode.removeChild(row);
+        updateInvoice();
       }
   
-      updateInvoice();
     }
   
     function onEnterCancel(e) {
@@ -211,7 +212,7 @@
     }
   
     if (window.addEventListener) {
-      // document.addEventListener('click', onClick);
+      document.addEventListener('click', onClick);
   
       document.addEventListener('mousewheel', updateNumber);
       document.addEventListener('keydown', updateNumber);
